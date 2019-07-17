@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CalculatorModded</string>
+    <string name="tv_initial_text">0</string>
+    <string name="rb_1_text">Simple</string>
+    <string name="rb_2_text">More options</string>
+    <string name="rb_3_text">TBA</string>
+    <string name="b00_text">C</string>
+    <string name="b01_text">+</string>
+    <string name="b02_text">-</string>
+    <string name="b03_text">*</string>
+    <string name="b10_text">7</string>
+    <string name="b11_text">8</string>
+    <string name="b12_text">9</string>
+    <string name="b13_text">/</string>
+    <string name="b20_text">4</string>
+    <string name="b21_text">5</string>
+    <string name="b22_text">6</string>
+    <string name="b23_text">=</string>
+    <string name="b30_text">1</string>
+    <string name="b31_text">2</string>
+    <string name="b32_text">3</string>
+    <string name="b33_text">0</string>
+    <string name="b40_text">±</string>
+    <string name="b41_text">√</string>
+    <string name="b42_text">x²</string>
+    <string name="b43_text">←</string>
+
+</resources>
