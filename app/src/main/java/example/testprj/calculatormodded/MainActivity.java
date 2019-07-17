@@ -246,7 +246,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else if (view.getId() == buttonIds[4][1]){
-                    if (buttonEditableTV.getText() != "0"){
+                    if (Double.parseDouble((String)buttonEditableTV.getText()) < 0){
+                        Toast.makeText(getApplicationContext(),"We don't do complex numbers here",Toast.LENGTH_LONG).show();
+                    }
+                    else if (buttonEditableTV.getText() != "0"){
                         buttonEditableTV.setText(Double.toString(Math
                                 .sqrt(Double.parseDouble((String)buttonEditableTV.getText()))));
                     }
