@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,11 +16,17 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static TextView uneditableTV;
-    private static TextView buttonEditableTV;
-    private static TextView operatorsTV;
+    private TextView uneditableTV;
+    private TextView buttonEditableTV;
+    private TextView operatorsTV;
 
-    private static LinearLayout biggestLL;
+    private RadioGroup modeRG;
+
+    private RadioButton mode1_RB;
+    private RadioButton mode2_RB;
+    private RadioButton mode3_RB;
+
+    private LinearLayout biggestLL;
 
     private static  boolean pluspressed = false;
     private static  boolean minuspressed = false;
@@ -30,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private static String[][] btn_text = new String[5][4];
 
 
-
-    private static int wrapcontent = LinearLayout.LayoutParams.WRAP_CONTENT;
+    int wrapcontent = LinearLayout.LayoutParams.WRAP_CONTENT;
 
 
 
@@ -45,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
         uneditableTV = findViewById(R.id.tv_closed_text);
         buttonEditableTV = findViewById(R.id.tv_button_editable_text);
         operatorsTV = findViewById(R.id.tv_operator_placement);
+
+        modeRG = findViewById(R.id.rg_mode);
+
+        mode1_RB = findViewById(R.id.rb_1);
+        mode2_RB = findViewById(R.id.rb_2);
+        mode3_RB = findViewById(R.id.rb_3);
 
         biggestLL = findViewById(R.id.ll_main);
 
@@ -79,6 +92,27 @@ public class MainActivity extends AppCompatActivity {
         lineOfButtonsBuilder(2);
         lineOfButtonsBuilder(3);
         lineOfButtonsBuilder(4);
+
+        layouts[4].setVisibility(View.INVISIBLE);
+
+        View.OnClickListener RBonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (modeRG.getCheckedRadioButtonId()){
+                    case R.id.rb_1:
+                        layouts[4].setVisibility(View.INVISIBLE);
+                        break;
+                    case R.id.rb_2:
+                        layouts[4].setVisibility(View.VISIBLE);
+                        break;
+
+                }
+            }
+        };
+
+        mode1_RB.setOnClickListener(RBonClickListener);
+        mode2_RB.setOnClickListener(RBonClickListener);
+        mode3_RB.setOnClickListener(RBonClickListener);
 
 
 
